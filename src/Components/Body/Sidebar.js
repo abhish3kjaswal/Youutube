@@ -1,11 +1,12 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
   const appstate = useSelector((state) => state?.app);
 
   const location = useLocation();
+  const navigate=useNavigate()
 
   //Early Return Pattern
   // if (
@@ -32,7 +33,7 @@ const Sidebar = () => {
     <div className="p-5 shadow-lg w-1/6">
       <>
         <ul>
-          <li>Home</li>
+          <li onClick={()=>navigate("/")} className="cursor-pointer">Home</li>
           <li>Shorts</li>
           <li>Subscriptions</li>
           <li>Youtube Music</li>

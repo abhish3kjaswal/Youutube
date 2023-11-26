@@ -40,7 +40,7 @@ const appRouter = createBrowserRouter([
         element: <WatchPage />,
       },
       {
-        path: "/result",
+        path: "/results",
         element: <ResultsPage />,
       },
     ],

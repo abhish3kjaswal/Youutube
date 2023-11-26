@@ -11,6 +11,7 @@ const searchSlice = createSlice({
       //merge 2 arrays
       state = Object.assign(state, action.payload);
     },
+   
   },
 });
 
