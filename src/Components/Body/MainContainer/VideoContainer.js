@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { YOUTUBE_VIDEOS_API } from "../../../Utils/constants";
 import VideoCard from "./VideoCard";
 import { Link } from "react-router-dom";
+import VideoContainerShimmerUI from "./VideoContainerShimmerUI";
 
 const VideoContainer = () => {
   const [videos, setVideos] = useState([]);
@@ -20,7 +21,7 @@ const VideoContainer = () => {
 
   return (
     <div className="flex flex-wrap">
-      {videos.length
+      {videos && videos.length
         ? videos.map((ele, i) => (
             <Link key={ele?.key || i} to={"/watch?v=" + ele.id}>
               {i == 0 ? (
@@ -30,7 +31,7 @@ const VideoContainer = () => {
               )}
             </Link>
           ))
-        : ""}
+        : <VideoContainerShimmerUI />}
     </div>
   );
 };

@@ -45,7 +45,7 @@ const ResultsPage = () => {
               <ResultCard info={ele} />
             </Link>
           ))
-        : ""}
+        : "No Results Found"}
     </div>
   );
 };

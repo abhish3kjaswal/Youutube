@@ -5,9 +5,9 @@ const list = ["All", "Gaming", "Songs", "Live", "Soccer", "Cricket", "Cooking"];
 const ButtonsList = () => {
   return (
     <div className="flex">
-      {list.map((ele, i) => (
-        <Button key={i}>{ele}</Button>
-      ))}
+      {list &&
+        list.length ?
+        list.map((ele, i) => <Button key={i}>{ele}</Button>):""}
     </div>
   );
 }

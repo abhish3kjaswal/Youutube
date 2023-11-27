@@ -1,18 +1,32 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { closeMenu } from "../../Utils/Features/appSlice";
 import { useDispatch } from "react-redux";
 import { useParams, useSearchParams } from "react-router-dom";
 import CommentsContainer from "./CommentsContainer";
+import WatchPageShimmerUi from "./WatchPageShimmerUi";
 
 const WatchPage = () => {
   const [params] = useSearchParams();
+  const [check, setCheck] = useState(false);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(closeMenu());
   }, []);
-  return (
+
+  useEffect(() => {
+    const ti = setTimeout(() => {
+      setCheck(true);
+    }, 300);
+
+    return () => {
+      clearTimeout(ti);
+    };
+  }, []);
+  return !check ? (
+    <WatchPageShimmerUi />
+  ) : (
     <div className="flex flex-col">
       <div className="px-5">
         <iframe
@@ -28,7 +42,6 @@ const WatchPage = () => {
       <CommentsContainer />
     </div>
   );
-  
 };
 
 export default WatchPage;
