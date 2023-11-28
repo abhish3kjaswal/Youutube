@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { useParams, useSearchParams } from "react-router-dom";
 import CommentsContainer from "./CommentsContainer";
 import WatchPageShimmerUi from "./WatchPageShimmerUi";
+import LiveChat from "./ChatComponent/LiveChat";
 
 const WatchPage = () => {
   const [params] = useSearchParams();
@@ -18,7 +19,7 @@ const WatchPage = () => {
   useEffect(() => {
     const ti = setTimeout(() => {
       setCheck(true);
-    }, 300);
+    }, 1000);
 
     return () => {
       clearTimeout(ti);
@@ -27,17 +28,20 @@ const WatchPage = () => {
   return !check ? (
     <WatchPageShimmerUi />
   ) : (
-    <div className="flex flex-col">
-      <div className="px-5">
-        <iframe
-          width={1100}
-          height={550}
-          src={"https://www.youtube.com/embed/" + params.get("v")}
-          title="The Last El Clasico Between Cristiano Ronaldo & Lionel Messi"
-          //   frameBorder={0}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen=""
-        />
+    <div className="flex flex-col w-full">
+      <div className="flex flex-row px-5 w-full">
+        <div className="w-[70%]">
+          <iframe
+            width={"100%"}
+            height={550}
+            src={"https://www.youtube.com/embed/" + params.get("v")}
+            title="The Last El Clasico Between Cristiano Ronaldo & Lionel Messi"
+            //   frameBorder={0}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen=""
+          />
+        </div>
+        <LiveChat />
       </div>
       <CommentsContainer />
     </div>

@@ -1,84 +1,85 @@
 import React from "react";
 import Comment from "./CommentsComponents/Comment";
 import CommentsList from "./CommentsComponents/CommentsList";
+import { generateRandomMessage, generateRandomName } from "../../Utils/helper";
 
 const commentData = [
   {
-    name: "abc",
-    text: "lorem ipsum text sir color dols",
+    name: generateRandomName(),
+    text: generateRandomMessage(30),
     replies: [
       {
-        name: "abc 2",
-        text: "lorem ipsum text sir color dols",
+        name: generateRandomName(),
+        text: generateRandomMessage(40),
         replies: [
           {
-            name: "abc 3",
-            text: "lorem ipsum text sir color dols",
+            name: generateRandomName(),
+            text: generateRandomMessage(20),
             replies: [
               {
-                name: "abc 3",
-                text: "lorem ipsum text sir color dols",
+                name: generateRandomName(),
+                text: generateRandomMessage(40),
                 replies: [],
               },
               {
-                name: "abc 3",
-                text: "lorem ipsum text sir color dols",
+                name: generateRandomName(),
+                text: generateRandomMessage(50),
                 replies: [],
               },
               {
-                name: "abc 3",
-                text: "lorem ipsum text sir color dols",
+                name: generateRandomName(),
+                text: generateRandomMessage(20),
                 replies: [],
               },
             ],
           },
           {
-            name: "abc 3",
-            text: "lorem ipsum text sir color dols",
+            name: generateRandomName(),
+            text: generateRandomMessage(60),
             replies: [],
           },
           {
-            name: "abc 3",
-            text: "lorem ipsum text sir color dols",
+            name: generateRandomName(),
+            text: generateRandomMessage(10),
             replies: [],
           },
           {
-            name: "abc 3",
-            text: "lorem ipsum text sir color dols",
+            name: generateRandomName(),
+            text: generateRandomMessage(20),
             replies: [],
           },
         ],
       },
       {
-        name: "abc 2",
-        text: "lorem ipsum text sir color dols",
+        name: generateRandomName(),
+        text: generateRandomMessage(30),
         replies: [],
       },
       {
-        name: "abc 2",
-        text: "lorem ipsum text sir color dols",
+        name: generateRandomName(),
+        text: generateRandomMessage(10),
         replies: [],
       },
     ],
   },
   {
-    name: "abc 22",
-    text: "lorem ipsum text sir color dols",
+    name: generateRandomName(),
+    text: generateRandomMessage(50),
     replies: [],
   },
   {
-    name: "abc 33",
-    text: "lorem ipsum text sir color dols",
+    name: generateRandomName(),
+    text: generateRandomMessage(40),
     replies: [],
   },
   {
-    name: "abc 44",
-    text: "lorem ipsum text sir color dols",
+    name: generateRandomName(),
+    text: generateRandomMessage(20),
     replies: [],
   },
   {
-    name: "abc 55",
-    text: "lorem ipsum text sir color dols",
+    name: generateRandomName(),
+    text: generateRandomMessage(20),
     replies: [],
   },
 ];

@@ -75,3 +75,17 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ## For APIs
 
 YOUTUBE DATA APIs -> Generate API key and use YOUTUBE's DATA APIs
+
+
+
+# Live Chat
+    -> Live Chat > inifinite scroll > Pagination
+    Challenges -> 
+        - Get Data Live
+        - Update the UI
+        
+    Handle Live Data
+        - Web Sockets -> handshake between UI and Server and data is shared live
+        - Long/API Polling -> after continuous time intervals making an api calls
+
+         
