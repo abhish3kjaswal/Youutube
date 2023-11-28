@@ -2,6 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../../Utils/Features/appSlice";
 import { Link, json, useNavigate } from "react-router-dom";
+
+import MicIcon from "@mui/icons-material/Mic";
+import NotificationsIcon from "@mui/icons-material/Notifications";
+import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
+import VideoCallOutlinedIcon from "@mui/icons-material/VideoCallOutlined";
 import {
   YOUTUBE_API_KEY,
   YOUTUBE_RESULTS_API,
@@ -72,20 +77,17 @@ const Head = (props) => {
     e && e.preventDefault();
     searchTxt && navigate("/results?search_query=" + searchTxt);
     setShowSuggestions(false);
-
   };
 
   const handleSuggestionListClick = (e, sugName) => {
     e && e.preventDefault();
     e && e.stopPropagation();
 
-    setSearchTxt(sugName)
-    
-    
+    setSearchTxt(sugName);
+
     sugName && navigate("/results?search_query=" + sugName);
     setShowSuggestions(false);
   };
-
 
   return (
     <div className="grid grid-flow-col p-2 m-2 shadow-lg">
@@ -126,6 +128,9 @@ const Head = (props) => {
                 src="https://static-00.iconduck.com/assets.00/magnifying-glass-icon-2048x2048-hm9qywq7.png"
               />
             </button>
+            <div className="rounded-full ml-6 flex items-center justify-center p-2 border bg-gray-100 w-[40px] cursor-pointer">
+              <MicIcon />
+            </div>
           </div>
         </form>
         {(showSuggestion && searchSuggestions?.length && (
@@ -155,10 +160,14 @@ const Head = (props) => {
         )) ||
           ""}
       </div>
-      <div className="">
+      <div className="flex justify-end items-center ">
+        <VideoCallOutlinedIcon fontSize="large" className="cursor-pointer"/>
+        <NotificationsNoneOutlinedIcon fontSize="large" className="ml-4 cursor-pointer"/>
+
         <img
-          className="h-8 cursor-pointer "
+          className="h-8 cursor-pointer ml-4 mr-3"
           alt="user-icon"
+          style={{display:'flex'}}
           src="https://i.pinimg.com/474x/76/4d/59/764d59d32f61f0f91dec8c442ab052c5.jpg"
         />
       </div>

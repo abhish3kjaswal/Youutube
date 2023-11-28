@@ -38,7 +38,8 @@ const VideoContainer = () => {
 
 const AdHOCVideoCard = (props) => {
   return (
-    <div className="p-1 m-1 border border-red-700">
+    <div className="p-1 m-1">
+      <label className="text-sm font-semibold cursor-pointer">Ad</label>
       <VideoCard {...props} />
     </div>
   );
